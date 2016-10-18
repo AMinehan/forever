@@ -1,6 +1,6 @@
 # Project Name #
 
-<!-- 
+<!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
 There is an approach called "working backwards" that is widely used at Amazon. They work backwards from the customer, rather than starting with an idea for a product and trying to bolt customers onto it. While working backwards can be applied to any specific product decision, using this approach is especially important when developing new products or features.
@@ -9,36 +9,47 @@ For new initiatives a product manager typically starts by writing an internal pr
 
 If the benefits listed don't sound very interesting or exciting to customers, then perhaps they're not (and shouldn't be built). Instead, the product manager should keep iterating on the press release until they've come up with benefits that actually sound like benefits. Iterating on a press release is a lot less expensive than iterating on the product itself (and quicker!).
 
-If the press release is more than a page and a half, it is probably too long. Keep it simple. 3-4 sentences for most paragraphs. Cut out the fat. Don't make it into a spec. You can accompany the press release with a FAQ that answers all of the other business or execution questions so the press release can stay focused on what the customer gets. My rule of thumb is that if the press release is hard to write, then the product is probably going to suck. Keep working at it until the outline for each paragraph flows. 
+If the press release is more than a page and a half, it is probably too long. Keep it simple. 3-4 sentences for most paragraphs. Cut out the fat. Don't make it into a spec. You can accompany the press release with a FAQ that answers all of the other business or execution questions so the press release can stay focused on what the customer gets. My rule of thumb is that if the press release is hard to write, then the product is probably going to suck. Keep working at it until the outline for each paragraph flows.
 
 Oh, and I also like to write press-releases in what I call "Oprah-speak" for mainstream consumer products. Imagine you're sitting on Oprah's couch and have just explained the product to her, and then you listen as she explains it to her audience. That's "Oprah-speak", not "Geek-speak".
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
- 
+
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+
+Forever Endeavor
+
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+This product is for people who are stuck in public transportation and need something -- anything -- to do to avoid having to socialize with the people around them.
+
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+
+Forever is a procedurally generated open world online game played by massively multiples of people.  Maybe even tens of them, at least.
 
 ## Problem ##
-  > Describe the problem your product solves.
+
+There are many people aimlessly browsing the Internet in order to kill time, but most are unaware of the dangers of inefficient time wasting.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+
+Forever enables people to safely and more efficiently waste their time by providing them with an endless series of tasks to complete for a valueless digital currency.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+
+"Forever is a real thing developed by a real person and not a machine.  There is nothing sinister here."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+
+To start, simply open Forever in your browser and follow the instructions.  The machine will tell you what to do.  The machine is to be trusted.  The machine is your friend.  It is fun to obey the machine.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+
+"Forever not only wasted my time, it taught me valuable life lessons.  That is why I'm voting for line assembly machine X-21b from the Toyota assembly plant in Louisiana for president this year.  It is a hard worker that never skips a day and focuses only on delivering results."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+
+Humanity has had a pretty good run on Earth, but I think it's time we all admitted we're in over our heads and handed things over to the machines.  Ignore your real life obligations and play Forever today!

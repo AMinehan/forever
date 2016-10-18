@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='forever'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Forever</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body>
+    <h1>FOREVER</h1>
+
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+    <div class="fade" ui-view=''></div>
+    <!-- ='$routeChangeStart' -->
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="app/auth/auth.js"></script>
+    <script src="app/world/world.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

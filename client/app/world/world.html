@@ -1,0 +1,30 @@
+<div id='container' tabindex="0" ng-keydown="keyHandler($event)">
+  <div class='navigation'>
+ <!-- <ul>
+    <li><a href='/#/links' class='index'>All Links</a></li>
+    <li><a href='/#/shorten' class='create'>Shorten</a></li>
+  </ul> -->
+  <a ng-click='signout()' class='logout'>Logout</a>
+  </div>
+  <div class="stats"></div>
+  <div><h1>WORLD</h1>
+    <div class="world" ng-keypress="keyHandler($event)" ng-repeat="dats in stringyMap track by $index">{{dats}}
+      </div>
+    </div>
+
+  </div>
+<!--  <h1>shortlified links</h1>
+
+  <input ng-change="handleInput()" ng-model='data.filter' type='text' placeholder="search links..." />
+
+  <div class="link" ng-repeat="link in data.filteredArray">
+    <shorten-link></shorten-link>
+  </div>
+</div>
+-->
+
+<!---    <div class="visits"><span class="count">{{ link.visits }} Visits</span></div>
+    <img src="../assets/redirect_icon.png"></img>
+    <span class='title'>{{ link.title }}</span><br/>
+    <span class='original'>{{ link.url }}</span><br/>
+    <a href=http://localhost:8000/{{link.code}}>http://www.shortlify.com/{{ link.code }}</a><br/> -->
