@@ -5,25 +5,21 @@ var World = require('./worldModel.js');
 var findChar = Q.nbind(Characters.findOne, Characters);
 var createChar = Q.nbind(Characters.create, Characters);
 var updateChar = Q.nbind(Characters.findOneAndUpdate, Characters);
+var removeChar = Q.nbind(Characters.findOneAndremove, Characters);
 
-signup: function (req, res, next) {
+create: function (req, res, next) {
     var name = req.body.name;
-    // check to see if user already exists
+    // check to see if character already exists
     findChar({charName: name})
       .then(function (char) {
         if (char) {
-          return updateChar({
-            charName: name,
-            owner: req.body.owner,
-            level: req.body.level,
-            stuff: req.body.stuff
-          })
+          next(new Error('Character already exists'));
         } else {
           return createChar({
             charName: name,
             owner: req.body.owner,
-            level: req.body.level,
-            stuff: req.body.stuff
+            level: 1,
+            stuff: []
           });
         }
       })
@@ -36,3 +32,7 @@ signup: function (req, res, next) {
         next(error);
       });
     },
+
+dies: function(req, res, next) {
+  removeChar({charName: req.body.name})
+}

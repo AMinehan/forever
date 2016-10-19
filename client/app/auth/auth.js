@@ -35,7 +35,7 @@ function authController($scope, $window, $location, $rootScope, Auth) {
         .then(function (token) {
           $scope.user.loggedinUsername = $scope.user.username;
           console.log('loggedin user: ', $scope.user.loggedinUsername);
-          $window.localStorage.setItem('com.shortly', token);
+          $window.localStorage.setItem('com.forever', token);
           $location.path('/world');
         })
         .catch(function (error) {
@@ -52,7 +52,7 @@ function authController($scope, $window, $location, $rootScope, Auth) {
     if (validate()) {
       Auth.signup($scope.user)
         .then(function (token) {
-          $window.localStorage.setItem('com.shortly', token);
+          $window.localStorage.setItem('com.forever', token);
           $location.path('/world');
         })
         .catch(function (error) {

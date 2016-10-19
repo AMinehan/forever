@@ -12,8 +12,8 @@ module.exports = function (app, express) {
 
   // authentication middleware used to decode token and made available on the request
   // app.use('/api/links', helpers.decode);
-  app.get('/api/world/', worldController.worldInit);
-  app.post('/api/world/', worldController.world);
+  app.post('/api/world/', worldController.postWorld);
+  app.get('/api/world/', worldController.getWorld);
   app.get('/api/player/', userController.player);
 
   // If a request is sent somewhere other than the routes above,

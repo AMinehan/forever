@@ -19,23 +19,22 @@ module.exports = {
     })
   },
   player: function(req, res, next){
-      console.log('hi');
-      var token = req.headers['x-access-token'];
-      if (!token) {
-        next(new Error('No token'));
-      } else {
-        var user = jwt.decode(token, 'secret');
-        findUser({username: user.username})
-          .then(function (foundUser) {
-            if (foundUser) {
-              res.send(200, foundUser);
-            } else {
-              res.send(401, foundUser);
-            }
-          })
-          .fail(function (error) {
-            next(error);
-          });
+    var token = req.headers['x-access-token'];
+    if (!token) {
+      next(new Error('No token'));
+    } else {
+      var user = jwt.decode(token, 'secret');
+      findUser({username: user.username})
+        .then(function (foundUser) {
+          if (foundUser) {
+            res.send(200, foundUser);
+          } else {
+            res.send(401, foundUser);
+          }
+        })
+        .fail(function (error) {
+          next(error);
+        });
       }
     },
   signin: function (req, res, next) {

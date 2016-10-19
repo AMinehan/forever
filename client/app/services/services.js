@@ -1,7 +1,7 @@
 angular.module('forever.services', [])
 
 .factory('World', function($http){
-  var getWorld = function(locs) {
+  var getWorld = function() {
     return $http({
       method: 'GET',
       url: '/api/world'
@@ -9,6 +9,15 @@ angular.module('forever.services', [])
     .then(function(resp){
       return resp.data;
     })
+  }
+  var postWorld = function(locs, map){
+    return $http({
+      method: 'POST',
+      url: 'api/world',
+      data: {locs: locs, map: map}
+    }).then(function(resp){console.log(resp);
+      return resp;
+    });
   }
   var getPlayer = function(){
     return $http({
@@ -21,48 +30,13 @@ angular.module('forever.services', [])
   }
   return {
     getWorld: getWorld,
-    getPlayer: getPlayer
+    getPlayer: getPlayer,
+    postWorld: postWorld
   }
 
 
 })
-// .factory('Links', function ($http) {
-
-//   var getAll = function() {
-//     return $http({
-//       method: 'GET',
-//       url: '/api/links'
-//     })
-//     .then(function(resp) {
-//       return resp.data;
-//     });
-//   };
-
-//   var addOne = function(newLink) {
-//     return $http({
-//       method: 'POST',
-//       url: '/api/links',
-//       data: newLink
-//     });
-//     // .then(function(resp) {
-//     //   return resp;
-//     // });
-//   };
-
-//   return {
-//     get: get,
-//     getAll: getAll,
-//     addOne: addOne
-//   };
-// })
 .factory('Auth', function ($http, $location, $window) {
-  // Don't touch this Auth service!!!
-  // it is responsible for authenticating our user
-  // by exchanging the user's username and password
-  // for a JWT from the server
-  // that JWT is then stored in localStorage as 'com.shortly'
-  // after you signin/signup open devtools, click resources,
-  // then localStorage and you'll see your token from the server
   var signin = function (user) {
     return $http({
       method: 'POST',
@@ -86,12 +60,12 @@ angular.module('forever.services', [])
   };
 
   var isAuth = function () {
-    return !!$window.localStorage.getItem('com.shortly');
+    return !!$window.localStorage.getItem('com.forever');
   };
 
   var signout = function () {
     console.log('goodbye forever');
-    $window.localStorage.removeItem('com.shortly');
+    $window.localStorage.removeItem('com.forever');
     $location.path('/signin');
   };
 

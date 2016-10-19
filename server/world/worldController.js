@@ -3,16 +3,26 @@ var util = require('../config/utils.js');
 var World = require('./worldModel.js');
 
 // Promisify a few mongoose methods with the `q` promise library
-var findLink = Q.nbind(World.findOne, World);
-var createLink = Q.nbind(World.create, World);
-var findAllLinks = Q.nbind(World.find, World);
+var findWorld = Q.nbind(World.find, World);
+var createWorld = Q.nbind(World.update, World);
 
 module.exports = {
-  world: function(req, res, next) {
-    return;
+  getWorld: function(req, res, next) {
+    findWorld({}).then(function(world){
+      res.json(world);
+      console.log(world);
+    }).fail(function(err){
+      next(err);
+    })
   },
-  worldInit: function(req, res, next) {
-    return;
+  postWorld: function(req, res, next) {
+    var section = {location: req.body.locs, data: req.body.map };
+    console.log('post requested', req.body);
+    return createWorld({location: section.location}, section, {upsert: true, multi: false}).then(function(found){
+      if (found) { console.log('found', found)
+        res.send(found);
+      }
+    });
   },
   // allLinks: function (req, res, next) {
   //   findAllLinks({})
