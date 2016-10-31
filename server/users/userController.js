@@ -6,7 +6,6 @@ var User = require('./userModel.js');
 // Promisify a few mongoose methods with the `q` promise library
 var findUser = Q.nbind(User.findOne, User);
 var createUser = Q.nbind(User.create, User);
-// var findChar = Q.nbind(Characters.findOne, Characters);
 
 module.exports = {
   retrieve: function (req, res, next) {

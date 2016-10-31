@@ -4,10 +4,8 @@ var crypto = require('crypto');
 var CharactersSchema = new mongoose.Schema({
   charName: {type: String, index: {unique: true}},
   owner: String,
-  level: Number,
+  level: Number, //originally planned, not currently in use
   stuff: Array
-  // baseUrl: String,
-  // url: {type: String, index: {unique: true}}
 });
 
 CharactersSchema.methods.save = function(infos) {

@@ -1,6 +1,6 @@
 angular.module('forever.services', [])
-
 .factory('World', function($http){
+
   var getWorld = function() {
     return $http({
       method: 'GET',
@@ -10,6 +10,7 @@ angular.module('forever.services', [])
       return resp.data;
     })
   }
+
   var postWorld = function(locs, map){
     return $http({
       method: 'POST',
@@ -19,6 +20,7 @@ angular.module('forever.services', [])
       return resp;
     });
   }
+
   var getPlayer = function(){
     return $http({
       method: 'GET',
@@ -28,6 +30,7 @@ angular.module('forever.services', [])
       return resp.data;
     });
   }
+
   return {
     getWorld: getWorld,
     getPlayer: getPlayer,
@@ -37,6 +40,7 @@ angular.module('forever.services', [])
 
 })
 .factory('Auth', function ($http, $location, $window) {
+
   var signin = function (user) {
     return $http({
       method: 'POST',
@@ -68,7 +72,6 @@ angular.module('forever.services', [])
     $window.localStorage.removeItem('com.forever');
     $location.path('/signin');
   };
-
 
   return {
     signin: signin,

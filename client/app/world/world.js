@@ -110,6 +110,8 @@ var activeMap = cityMap;
   $scope.signout = function() {
     Auth.signout();
   };
+
+  //duplicates array of subarrays
   var copyMap = function(elmap){
     return elmap.slice().reduce(function(acc, cur){
       acc.push(cur.slice());
@@ -117,6 +119,7 @@ var activeMap = cityMap;
     }, [])
   }
 
+  //renders map
   var renderify = function(map, loc) {
     $scope.stringyMap = [];
     for (var i = 0; i < map[0].length * 3; i++){
@@ -128,8 +131,6 @@ var activeMap = cityMap;
           if (Math.floor(activeMap[i][j]) === 1 && activeMap !== cityMap){
             activeMap[i][j] = explore();
           }
-
-
           cityCodex[0].forEach(function(x, k) {
             $scope.stringyMap[i * 3 + k] += x;
           });
@@ -145,9 +146,13 @@ var activeMap = cityMap;
       }
     }
   };
+
+  //replace WWWs with random tiles
   var explore = function() {
     return Math.floor(Math.random() * (worldCodex.length - 2)) + 5 / 2;
   }
+
+  //build exciting houses!
   var housify = function() {
     activeMap[player.x][player.y] = 5;
     if ($scope.message === messages[3]) {
@@ -155,6 +160,8 @@ var activeMap = cityMap;
     }
 
   }
+
+  //build exciting roads!
   var roadify = function(locs) {
     var roads = [2,3,4]
     $scope.message = $scope.message === messages[4] ? '' : $scope.message;
@@ -241,9 +248,13 @@ var activeMap = cityMap;
     }
     renderify(activeMap);
   }
+
+  //convert x,y location into a string to be used as a key
   var scribe = function() {
     worldPointer = [$scope.worldLoc.x, $scope.worldLoc.y].join();
   };
+
+  //run once on start
   var init = function() {
     World.getWorld()
     .then(function(globe){
@@ -263,13 +274,4 @@ var activeMap = cityMap;
   }, 1000)
 
   init();
-})
-// .directive('shortenLink', function () {
-//   return {
-//     template: '<div class="visits"><span class="count">{{ link.visits }} Visits</span></div>' +
-//               '<img src="../assets/redirect_icon.png"></img>' +
-//               '<span class=\'title\'>{{ link.title }}</span><br/>' +
-//               '<span class=\'original\'>{{ link.url }}</span><br/>' +
-//               '<a href=http://localhost:8000/{{link.code}}>http://www.shortlify.com/{{ link.code }}</a><br/>'
-//   };
-// });
+});

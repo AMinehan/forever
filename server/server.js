@@ -6,7 +6,7 @@ var app = express();
 // connect to mongo database named "forever"
 mongoose.connect('mongodb://localhost/forever');
 
-// configure our server with all the middleware and routing
+// configure server with all the middleware and routing
 require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
 
@@ -14,5 +14,4 @@ require('./config/routes.js')(app, express);
 app.listen(3000);
 console.log('listening on 3000');
 
-// export our app for testing and flexibility, required by index.js
 module.exports = app;
